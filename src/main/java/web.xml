@@ -25,17 +25,17 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>SpringMVC</servlet-name>
-		<url-pattern>/tandem/*</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<!-- Spring basic configurations
+	<!-- Spring basic configurations-->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/classes/config/mvc.xml</param-value>
-	</context-param> -->
+	</context-param> 
 
 	<!-- Spring Security <filter> <filter-name>springSecurityFilterChain</filter-name> 
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class> 
