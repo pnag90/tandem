@@ -13,7 +13,7 @@
 		<org.springframework.version>4.2.2.RELEASE</org.springframework.version>
 		<org.springframework.security.version>4.0.2.RELEASE</org.springframework.security.version>
 		<org.slf4j-version>1.7.12</org.slf4j-version>
-		<jackson-2-version>2.4.1</jackson-2-version>
+		<jackson-2-version>2.5.1</jackson-2-version>
 	</properties>
 
 	<build>
@@ -174,6 +174,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.18.1-GA</version>
+		</dependency>
+
+		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
@@ -192,25 +198,49 @@
 		</dependency>
 
 		<!-- the core, which includes Streaming API, shared low-level abstractions 
-			(but NOT data-binding) -->
+			(but NOT data-binding)
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>${jackson-2-version}</version>
-		</dependency>
+			<version>LATEST</version>
+		</dependency> -->
 
 		<!-- Just the annotations; use this dependency if you want to attach annotations 
-			to classes without connecting them to the code. -->
+			to classes without connecting them to the code.
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>${jackson-2-version}</version>
-		</dependency>
+			<version>LATEST</version>
+		</dependency> -->
 
-		<!-- databinding; ObjectMapper, JsonNode and related classes are here -->
+		<!-- databinding; ObjectMapper, JsonNode and related classes are here 
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
+			<version>LATEST</version>
+		</dependency>-->
+
+		<!-- jackson -->
+		<!-- In Spring 4, support to Jackson 1.x has been deprecated in favor of Jackson v2. Lets change the old dependency: 
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+			<version>1.9.13</version>
+		</dependency> -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-2-version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
 			<version>${jackson-2-version}</version>
 		</dependency>
 	</dependencies>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13/dez/2015 18:38:52 by Hibernate Tools 4.3.1.Final -->
+<hibernate-mapping>
+    <class name="tandem.model.Profile" table="profile" catalog="tandem" optimistic-lock="version">
+        <id name="profileId" type="java.lang.Integer">
+            <column name="profile_id" />
+            <generator class="identity" />
+        </id>
+        <!-- 
+        <many-to-one name="users" class="tandem.model.Users" fetch="select">
+            <column name="user_fk" not-null="true" />
+        </many-to-one>
+        -->
+        <one-to-one name="users" class="tandem.model.Users" constrained="true">
+        </one-to-one>
+        <property name="privacy" type="byte">
+            <column name="privacy" not-null="true" />
+        </property>
+        <property name="rating" type="java.lang.Byte">
+            <column name="rating" />
+        </property>
+        <property name="nameNepali" type="string">
+            <column name="name_nepali" />
+        </property>
+        <property name="dob" type="timestamp">
+            <column name="dob" length="19" />
+        </property>
+        <property name="aboutMe" type="string">
+            <column name="about_me" length="160" />
+        </property>
+        <property name="relationship" type="string">
+            <column name="relationship" length="45" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="45" />
+        </property>
+        <property name="interests" type="string">
+            <column name="interests" />
+        </property>
+        <property name="education" type="string">
+            <column name="education" />
+        </property>
+        <property name="hobbies" type="string">
+            <column name="hobbies" />
+        </property>
+        <property name="facebookProfile" type="string">
+            <column name="facebook_profile" />
+        </property>
+        <property name="googleProfile" type="string">
+            <column name="google_profile" />
+        </property>
+        <property name="twitterProfile" type="string">
+            <column name="twitter_profile" />
+        </property>
+        <property name="locationGps" type="string">
+            <column name="location_gps" />
+        </property>
+        <property name="langFk" type="java.lang.Byte">
+            <column name="lang_fk" />
+        </property>
+        <property name="everythingElse" type="string">
+            <column name="everything_else" />
+        </property>
+        <property name="createdAt" type="timestamp">
+            <column name="created_at" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>
